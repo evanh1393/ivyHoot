@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Contact;
 
 class ContactComp extends Component
 {
@@ -16,7 +17,8 @@ class ContactComp extends Component
     public function render()
     {
         return view('livewire.contact-comp', [
-            'pageTitle' => 'Contact Page'
+            'pageTitle' => 'Contact Page',
+            'contacts' => Contact::all(),
         ]);
     }
 }
