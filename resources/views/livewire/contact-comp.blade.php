@@ -1,3 +1,5 @@
 <div>
-    <h3>Contacts</h3>
+    <h2 class="text-2xl tracking-tight">Contacts</h2>
+
+    
 </div>

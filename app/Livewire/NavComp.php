@@ -8,6 +8,10 @@ class NavComp extends Component
 {
     public function render()
     {
-        return view('livewire.nav-comp');
+        $currentRoute = request()->route()->uri();
+
+        return view('livewire.nav-comp',[
+            'currentRoute' => $currentRoute,
+        ]);
     }
 }

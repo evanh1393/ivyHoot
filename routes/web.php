@@ -9,3 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/contacts', ContactComp::class);
+
+Route::get('/info', function () {
+    phpinfo();
+});
