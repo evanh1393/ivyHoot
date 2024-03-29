@@ -11,7 +11,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     @livewireStyles
 </head>
 
@@ -21,7 +23,7 @@
     </div>
     
     <main class="flex-fill bg-dark-subtle">
-        <div class="container bg-white rounded p-5 mt-5" style="min-height: 650px">
+        <div class="shadow container bg-white rounded p-5 mt-5" style="min-height: 650px">
             {{ $slot }}
         </div>
     </main>

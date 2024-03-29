@@ -1,11 +1,11 @@
 <div>
 
-    <h1 class="text-black">Ivyhoot Contacts</h1>
+    <h1 class="dark-green-text">Ivyhoot Contacts</h1>
 	<p class="fs-5 my-3 text-secondary">Full List of Ivyhoot Contacts</p>
 
 	<div class="d-flex justify-content-between align-items-center">
 		<input type="text" id="contactSearch" class="form-control form-control-sm" style="width:350px" placeholder="Search" wire:model.live.debounce.150ms="search">
-		<a href="#" class="btn btn-primary btn-sm mb-3">Add Contact</a>
+		<a href="/contact-form" class="btn btn-primary btn-sm mb-3">Add Contact</a>
 	</div>
 	
 	

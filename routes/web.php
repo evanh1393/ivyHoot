@@ -1,16 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\ContactComp;  
+use App\Livewire\ContactComp; 
+use App\Livewire\ContactFormComp;
 
 
 Route::get('/', ContactComp::class);
 
 Route::get('/contacts', ContactComp::class);
-
-Route::get('/info', function () {
-    phpinfo();
-});
+Route::get('/contact-form', ContactFormComp::class);
 
 
 // custom stuff
