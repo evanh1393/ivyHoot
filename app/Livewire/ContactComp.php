@@ -30,9 +30,9 @@ class ContactComp extends Component
             // MongoDB is schema-less, but for simple attribute queries like this, 
             // the standard Laravel query builder syntax should suffice.
             $query->where(function ($q) {
-                $q->where('full_name', 'regex', new \MongoDB\BSON\Regex('^' . $this->search, 'i'))
-                  ->orWhere('email', 'regex', new \MongoDB\BSON\Regex('^' . $this->search, 'i'))
-                  ->orWhere('mobile', 'regex', new \MongoDB\BSON\Regex('^' . $this->search, 'i'));
+                $q->where('full_name', 'like', '%' . $this->search . '%')
+                  ->orWhere('email', 'like', '%' . $this->search . '%')
+                  ->orWhere('mobile', 'like', '%' . $this->search . '%');
             });
         }
 

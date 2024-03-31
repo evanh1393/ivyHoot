@@ -25,10 +25,22 @@ Route::get('/contact-form', ContactFormComp::class);
     return ['msg' => $msg];
 }); */
 
-/* use App\Models\Contact;
+use App\Models\Contact;
 use App\Models\Program;
 
-Route::get('/mongoPG', function (Request $request) {
+/* $programList = [
+1	Test
+2	Corporate
+3	CAMO
+4	FDA CTP
+5	Seymour Johnson AFB A&FRC
+    'Barksdale AFB A&FRC' => 6, 	
+    'USAO WD NC' => 7,	
+    'Whiteman AFB A&FRC' => 8,	
+    'Scott AFB' => 10,	
+    'CAMO (ZAI)' => 11,	
+] */
+/* Route::get('/mongoPG', function (Request $request) {
     $filePath = public_path('data/ProgramUsers.csv');
 
     if (($handle = fopen($filePath, 'r')) !== FALSE) {
@@ -62,4 +74,25 @@ Route::get('/mongoPG', function (Request $request) {
 
         fclose($handle);
     }
-}); */
+});  */
+
+Route::get('/ipAdd', function (Request $request) {
+    // The IP address you want to allow access from
+    $ipAddress = "212.102.33.117/32"; // Use CIDR notation
+
+    // The ID of the security group you want to modify
+    $securityGroupId = "sg-06bbe8a495ee75f33";
+
+    // The AWS CLI command to update the security group
+    $command = "aws ec2 authorize-security-group-ingress --group-id {$securityGroupId} --protocol tcp --port 443 --cidr {$ipAddress}";
+
+    // Execute the command
+    $output = shell_exec($command);
+    
+    // Check for errors or success
+    if ($output === null) {
+        echo "Error executing command or command returned with no output.";
+    } else {
+        echo "Command executed successfully: {$output}";
+    }
+});

@@ -23,7 +23,8 @@
     </div>
     
     <main class="flex-fill bg-dark-subtle">
-        <div class="shadow container bg-white rounded p-5 mt-5" style="min-height: 650px">
+        
+        <div class="shadow container bg-white rounded p-5 my-5" style="min-height: 650px">
             {{ $slot }}
         </div>
     </main>

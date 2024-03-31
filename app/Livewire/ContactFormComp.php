@@ -11,7 +11,14 @@ class ContactFormComp extends Component
 
     public function save()
     {
-        $this->form->store();
+        if($this->form->store()) {
+            session()->flash([
+                'alertColor' => 'success', 
+                'message' => 'Contact was saved successfully.'
+            ]);
+        } else {
+            session()->flash(['alertColor' => 'danger', 'message' => 'Contact was not saved successfully.']);
+        }
     }
 
     public function render()
