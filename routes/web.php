@@ -3,13 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ContactComp; 
 use App\Livewire\ContactFormComp;
-
+use App\Livewire\ProgramComponent;
 
 Route::get('/', ContactComp::class);
 
 Route::get('/contacts', ContactComp::class);
-Route::get('/contact-form', ContactFormComp::class);
+//Route::get('/contact-form', ContactFormComp::class);
 
+Route::get('/programs', ProgramComponent::class);
 
 // custom stuff
 
@@ -76,7 +77,7 @@ use App\Models\Program;
     }
 });  */
 
-Route::get('/ipAdd', function (Request $request) {
+/* Route::get('/ipAdd', function (Request $request) {
     // The IP address you want to allow access from
     $ipAddress = "212.102.33.117/32"; // Use CIDR notation
 
@@ -95,4 +96,4 @@ Route::get('/ipAdd', function (Request $request) {
     } else {
         echo "Command executed successfully: {$output}";
     }
-});
+}); */
